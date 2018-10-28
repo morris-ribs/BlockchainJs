@@ -5,6 +5,9 @@ const uuid = require("uuid/v1");
 
 const app = express();
 
+// process.argv refers to the script run by 'npm start' (check package.json)
+const port = process.argv[2];
+
 const bitcoin = new Blockchain();
 
 const nodeAddress = uuid().split("-").join("");
@@ -48,6 +51,6 @@ app.get("/mine", function (req, res) {
     });
 });
 
-app.listen(3000, () => {
-    console.log("Listening on port 3000...");
+app.listen(port, () => {
+    console.log(`Listening on port ${port}...`);
 });
