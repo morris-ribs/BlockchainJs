@@ -13,8 +13,18 @@ bitcoin.createNewTransaction(50, 'MAURE8RT4REZT89REST', 'JENNRTGQ7E89RHUTRSGH');
 bitcoin.createNewTransaction(300, 'MAURE8RT4REZT89REST', 'JENNRTGQ7E89RHUTRSGH');
 bitcoin.createNewTransaction(2000, 'MAURE8RT4REZT89REST', 'JENNRTGQ7E89RHUTRSGH');
 
-
-
 bitcoin.createNewBlock(123123, 'HRYHRRT456RGER', 'EZNJORTJZORTIJREZO');
 
-console.log(bitcoin);
+const currentBlockData = [
+    {
+        amount: 50, sender: 'MAURE8RT4REZT89REST', recipient: 'JENNRTGQ7E89RHUTRSGH'
+    }, {
+        amount: 300, sender: 'BOBJJYEJTYHDGHDHD', recipient: 'JENNRTGQ7E89RHUTRSGH'
+    }, {
+        amount: 2000, sender: 'TOMRPOTKIROYJDORTYHJORT', recipient: 'JENNRTGQ7E89RHUTRSGH'
+    }
+];
+
+
+console.log(bitcoin.hashBlock("RTYREYEY435GEYG", currentBlockData, 100));
+//console.log(bitcoin);
