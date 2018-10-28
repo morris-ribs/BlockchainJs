@@ -26,7 +26,8 @@ const currentBlockData = [
     }
 ];
 
+console.log(bitcoin);
 
-//console.log(bitcoin.hashBlock("RTYREYEY435GEYG", currentBlockData, 100));
-//console.log(bitcoin);
-console.log(bitcoin.proofOfWork(previousBlockHash, currentBlockData));
+//console.log(bitcoin.proofOfWork(previousBlockHash, currentBlockData));
+// verifying the result of the POW
+//console.log(bitcoin.hashBlock(previousBlockHash, currentBlockData, 46685));
