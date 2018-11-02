@@ -84,7 +84,7 @@ app.get("/mine", function (req, res) {
     .then(data => {
         // reward for who created the block
         const requestOptions = {
-            uri: networkNodeUrl + "/transaction/broadcast",
+            uri: bitcoin.currentNodeUrl + "/transaction/broadcast",
             method: "POST",
             body: { 
                 amount: 12.5, 
