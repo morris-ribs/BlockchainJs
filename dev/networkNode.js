@@ -227,6 +227,23 @@ app.get("/consensus", function (req, res) {
     });
 });
 
+// get a certain block
+app.get("/block/:blockHash", function(req, res) { // localhost:3001/block/euiswrifjreiwfjo
+    const blockHash = req.params.blockHash;
+    const correctBlock = bitcoin.getBlock(blockHash);
+    res.json({
+        block: correctBlock
+    });
+});
+
+// get a specific transaction
+app.get("/transaction/:transactionId", function(req, res) {
+    
+});
+
+app.get("/address/:address", function(req, res) {
+    
+});
 
 // bind
 app.listen(port, () => {
