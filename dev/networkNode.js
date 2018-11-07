@@ -238,7 +238,12 @@ app.get("/block/:blockHash", function(req, res) { // localhost:3001/block/euiswr
 
 // get a specific transaction
 app.get("/transaction/:transactionId", function(req, res) {
-    
+    const transactionId = req.params.transactionId;
+    const transactionData = bitcoin.getTransaction(transactionId);
+    res.json({
+        transaction: transactionData.transaction,
+        block: transactionData.block
+    });
 });
 
 app.get("/address/:address", function(req, res) {
