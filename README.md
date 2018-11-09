@@ -101,4 +101,4 @@ Select in the kind of information you want to find in the list, and write down i
 
 For example, if you select "Address" and in the input field you write *ba345540e29011e8adb803f70749c524* on the upper input field, when you click the "Search" button you will find all the transactions and balance of the address *ba345540e29011e8adb803f70749c524* in the results area.
 
-![alt text](https://github.com/morris-ribs/BlockchainJs/images/block-explorer.png "Block Explorer search address example")
+![alt text](https://github.com/morris-ribs/BlockchainJs/blob/master/images/block-explorer.png "Block Explorer search address example")
