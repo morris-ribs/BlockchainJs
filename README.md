@@ -24,9 +24,45 @@ Open five terminals, and in each one of then launch a different terminal:
  
  Open Postman and do a POST to localhost:3001/register-and-broadcast-node with the following request body
  
- { "newNodeUrl": "http://localhost:PORT" }
+ `{ "newNodeUrl": "http://localhost:PORT" }`
  
  where PORT is the port of the node (3002 to 3005)
  
- After this three steps, you will be able to create and broadcast transactions, as well as mine blocks
+ After this three steps, you will be able to create and broadcast transactions, as well as mine blocks.
  
+ ## Important functions
+ 
+ ### See blockchain
+ 
+ `GET /blockchain`
+ 
+ Example: open an API client and do a GET request to http://localhost:3001/blockchain
+ 
+ ### Create and broadcast transactions
+  
+ `POST /transaction/broadcast`
+ 
+ Example: open an API client and do a POST request to http://localhost:3002/transaction/broadcast with a request body such as:
+ 
+ `
+ { 
+  "amount": 120, 
+  "sender": "DRFTSGDGDFGDFG", 
+  "recipient": "AZODAZIODJOIAZDJ" 
+}
+ `
+ This should add the transaction to the pending transactions collection and broadcast this information to all nodes in the network.
+ 
+ ### Mine blocks
+ 
+ `GET /mine`
+ 
+ Example: open an API client and do a GET request to http://localhost:3001/mine
+ 
+ Then check the blockchain in all of the nodes.
+ 
+### Consensus
+
+ `GET /consensus`
+
+If there are nodes with different chains, we can reach a consensus calling this endpoint in one of them. For example: http://localhost:3005/consensus
