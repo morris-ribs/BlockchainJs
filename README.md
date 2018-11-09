@@ -51,6 +51,7 @@ Open five terminals, and in each one of then launch a different terminal:
   "recipient": "AZODAZIODJOIAZDJ" 
 }
  `
+ 
  This should add the transaction to the pending transactions collection and broadcast this information to all nodes in the network.
  
  ### Mine blocks
@@ -61,8 +62,43 @@ Open five terminals, and in each one of then launch a different terminal:
  
  Then check the blockchain in all of the nodes.
  
-### Consensus
+ ### Consensus
 
  `GET /consensus`
 
-If there are nodes with different chains, we can reach a consensus calling this endpoint in one of them. For example: http://localhost:3005/consensus
+ If there are nodes with different chains, we can reach a consensus calling this endpoint in one of them. For example: http://localhost:3005/consensus
+
+ 
+ ## Other functions
+ 
+ ### See details of a transaction
+ 
+ `GET /transaction/:transactionId`
+ 
+  For example: http://localhost:3001/transaction/trans123 will retrieve the detailed information of transaction *trans123*
+  
+ 
+ ### See details of a block
+  
+ `GET /block/:blockHash`
+ 
+ For example: http://localhost:3001/block/0000e27f4d52a5d17d8d3eeaf93ab037e173d09412f018bf0da085bfd72d66c3 will retrieve the detailed information of block with hash *0000e27f4d52a5d17d8d3eeaf93ab037e173d09412f018bf0da085bfd72d66c3*
+ 
+ ### See all transactions and balance of an address
+ 
+  `GET /address/:address`
+  
+  For example: http://localhost:3001/address/ba345540e29011e8adb803f70749c524 will retrieve the list of all transactions and the balance of member *ba345540e29011e8adb803f70749c524*
+
+
+# Block Explorer
+
+Last but not least, with the block explorer you can have a web page to check informations regarding transactions, address or blocks.
+
+Once you start the nodes, you can browse, for example http://localhost:3001/block-explorer to access it.
+
+Select in the kind of information you want to find in the list, and write down in the input field the identifier of the object whose information you are looking for, and click on the "Search" button.
+
+For example, if you select "Address" and in the input field you write *ba345540e29011e8adb803f70749c524* on the upper input field, when you click the "Search" button you will find all the transactions and balance of the address *ba345540e29011e8adb803f70749c524* in the results area.
+
+![alt text](https://github.com/morris-ribs/BlockchainJs/images/block-explorer.png "Block Explorer search address example")
